@@ -50,15 +50,15 @@ jobs:
         name: dist-files-20.x
         path: dist
 
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21 # Change if your port is different
-          local-dir: ./dist/
-          server-dir: / # <<<<<<< IMPORTANT: CHANGE THIS PATH
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21 # Change if your port is different
+        local-dir: ./dist/
+        server-dir: / # <<<<<<< IMPORTANT: CHANGE THIS PATH
           # Optional: Delete all files in the remote directory that are not in the local directory
           # delete: true
 
